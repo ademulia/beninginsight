@@ -26,10 +26,10 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <About />
         <Services />
         <Process />
         <Examples />
-        <About />
         <Technologies />
         <Contact />
       </main>

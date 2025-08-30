@@ -75,6 +75,53 @@ body {
   overflow: hidden;
 }
 
+/* About card styling to match other cards */
+.about-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,247,250,0.98));
+  border-radius: 16px;
+  border: 1px solid rgba(15,23,36,0.04);
+  padding: 28px 26px;
+  margin: 18px auto 0;
+  max-width: 920px;
+  box-shadow: 0 12px 30px rgba(15,23,36,0.06);
+  transition: transform 300ms cubic-bezier(0.2,0.9,0.2,1), box-shadow 300ms ease;
+  position: relative; /* needed for decorative accent */
+  overflow: hidden;
+}
+
+/* decorative top accent that matches other cards */
+.about-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-400), var(--primary-600));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 360ms ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(15,23,36,0.08), 0 4px 10px rgba(15,23,36,0.04);
+  border-color: rgba(255,255,255,0.9);
+}
+
+.about-card:hover:before {
+  transform: scaleX(1);
+}
+
+/* keep paragraph styles inside the card */
+.about-card .text-muted{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1rem;
+  max-width: 100%;
+}
+
 /* decorative top accent that animates on hover (match tech-item) */
 .service-card:before, .process-card:before {
   content: '';
@@ -186,7 +233,15 @@ body {
   box-shadow: 0 18px 40px rgba(15,23,36,0.08), 0 4px 10px rgba(15,23,36,0.04);
 }
 
-/* hide icon area if no icons are used */
+/* Remove decorative accent bar on all cards (hide pseudo-elements) */
+.service-card:before,
+.process-card:before,
+.tech-item:before,
+.about-card:before {
+  display: none !important;
+  content: none !important;
+}
+
 .tech-icon { display: none; }
 
 .tech-content {
@@ -242,6 +297,7 @@ body {
     height: 40px;
     font-size: 1.25rem;
   }
+  .about-card { padding: 18px; border-radius: 12px; }
 }
 
 html{scroll-padding-top: 80px}

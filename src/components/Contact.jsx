@@ -27,7 +27,7 @@ const Contact = () => {
       } else {
         setStatus('ERROR');
       }
-    } catch (err) {
+    } catch {
       setStatus('ERROR');
     } finally {
       setSending(false);

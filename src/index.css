@@ -230,52 +230,6 @@ body {
 /* ABOUT IMAGE */
 .img-fluid.rounded{box-shadow:0 20px 50px rgba(2,6,23,0.06);border-radius:14px}
 
-/* Workflow / Alur Kerja */
-.workflow{display:flex;flex-wrap:nowrap;gap:40px;align-items:flex-start}
-.workflow-step{flex:1 1 0;position:relative;padding:10px 10px 30px 10px;border-left:none;text-align:center}
-.workflow-step .dot{position:relative;display:inline-flex;align-items:center;justify-content:center;width:var(--dot-size);height:var(--dot-size);border-radius:50%;background:var(--primary-600);color:#fff;font-weight:700;z-index:2}
-
-/* adjust connector line with transform for precise positioning */
-.workflow{position:relative;padding-top:60px}
-.workflow:before{
-  content:'';
-  position:absolute;
-  left:20px;
-  right:20px;
-  top:50%;
-  height:2px;
-  background:rgba(15,23,36,0.15);
-  z-index:0;
-  height: 3px;
-  transform:translateY(8px); /* Fine-tune vertical position */
-}
-
-.workflow-step .dot{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  background:var(--primary-600);
-  color:#fff;
-  font-weight:700;
-  z-index:2
-}
-
-/* tambahkan garis horizontal yang menghubungkan dot: gunakan pseudo-element pada workflow */
-.workflow:before{content:'';position:absolute;left:20px;right:20px;top:54px;height:3px;background:rgba(15,23,36,0.08);z-index:0}
-.workflow{position:relative;padding-top:40px}
-
-/* Untuk menampilkan garis vertikal penuh di perangkat besar */
-@media(min-width:992px){
-  .workflow{align-items:flex-start}
-  .workflow-step{padding-bottom:30px}
-}
-
-.workflow-link{color:var(--primary-600);text-decoration:underline}
-
 /* RESPONSIVE */
 @media (max-width: 767px){
   .hero{padding:60px 20px}
@@ -292,14 +246,3 @@ body {
 
 html{scroll-padding-top: 80px}
 main{padding-top:70px}
-
-@media(max-width:991px){
-  .workflow{flex-direction:column;gap:24px}
-  .workflow:before{display:none}
-  .workflow-step{padding-left:60px;border-left:2px dashed rgba(15,23,36,0.06);text-align:left}
-  .workflow-step .dot{left:0}
-  .workflow-step .workflow-content{text-align:left;margin-left:40px}
-}
-
-.workflow-content h5{font-size:1rem}
-.workflow-content p{font-size:0.9rem}
